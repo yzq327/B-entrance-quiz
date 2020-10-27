@@ -1,7 +1,10 @@
 package api;
 
+import domain.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import service.StudentService;
 import vo.StudentVo;
 
 import java.util.ArrayList;
@@ -11,29 +14,27 @@ import java.util.stream.Collectors;
 
 @RestController
 public class StudentController {
+    @Autowired
+    StudentService studentService;
 
-//    @PostMapping("/order/{id}")
-//    public ResponseEntity addOrder(@PathVariable int id,
-//                                   @RequestBody @Valid Order order) {
-//        Optional<ProductPo> optionalProductPo = productService.findById(id);
+//    @PostMapping("/students")
+//    public ResponseEntity addOrder(@RequestBody @Valid Student student) {
+//        Optional<StudentPo> optionalProductPo = studentService.findById(student.getId());
 //        if(!optionalProductPo.isPresent()){
 //            return ResponseEntity.badRequest().build();
 //        }
-//        OrderPo orderPo = orderService.save(order, optionalProductPo.get());
+//        OrderPo orderPo = studentService.save(student, optionalProductPo.get());
 //        return ResponseEntity.ok(getOrderVo(orderPo));
 //    }
-//    private OrderVo getOrderVo(OrderPo orderPo) {
-//        return OrderVo.builder().id(orderPo.getId())
-//                .name(orderPo.getName())
-//                .amount(orderPo.getAmount())
-//                .price(orderPo.getPrice())
-//                .unit(orderPo.getUnit())
+//    private StudentVo getOrderVo(StudentPo studentPo) {
+//        return StudentPo.builder().id(studentPo.getId())
+//                .name(studentPo.getName())
 //                .build();
 //    }
 
-    @GetMapping("/orders")
+    @GetMapping("/students")
     public List<StudentVo> getOrders() {
-//        List<StudentVo> orderVos = orderService.findAll()；
+//        List<StudentVo> studengVo = studentService.findAll()；
         StudentVo studentVo1 = new StudentVo(1,"成吉思汗");
         StudentVo studentVo2 = new StudentVo(2,"鲁班七号");
         StudentVo studentVo3 = new StudentVo(3,"太乙真人");

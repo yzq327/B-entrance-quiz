@@ -28,7 +28,7 @@ public class CorsConfig {
     private void addAllowedOrigins(CorsConfiguration corsConfiguration) {
         for (String origin : originsVal) {
             corsConfiguration.addAllowedOrigin("http://" + origin);
-            corsConfiguration.addAllowedOrigin("https://" + origin);
+//            corsConfiguration.addAllowedOrigin("https://" + origin);
         }
     }
 }
