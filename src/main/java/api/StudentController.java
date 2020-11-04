@@ -1,5 +1,6 @@
 package api;
 
+// TODO GTB-工程实践: - 未使用的import应删除
 import domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,12 @@ import java.util.stream.Collectors;
 
 @RestController
 public class StudentController {
+    // TODO GTB-知识点: - 建议使用构造方法注入bean
+    // TODO GTB-工程实践: - 建议使用private，遵循最小访问原则
     @Autowired
     StudentService studentService;
 
+    // TODO GTB-工程实践: - 及时清理无用代码
 //    @PostMapping("/students")
 //    public ResponseEntity addOrder(@RequestBody @Valid Student student) {
 //        Optional<StudentPo> optionalProductPo = studentService.findById(student.getId());
